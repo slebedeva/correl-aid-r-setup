@@ -34,7 +34,7 @@ make run
 
 5. Open your browser and navigate to `localhost:8787`. Enter username `rstudio` and password `foobar`.
 
-6. Inside Rstudio, navigate into the `../lernplattform` directory. Click on File -> New Project and create a new Rproject choosing existing directory lernplattform.
+6. Inside Rstudio, navigate into the `/home/rstudio/CorrelAid/lernplattform` directory. Click on File -> New Project and create a new Rproject choosing existing directory lernplattform.
 
 7. Create an .Rprofile file inside the project directory with the following content:
 
