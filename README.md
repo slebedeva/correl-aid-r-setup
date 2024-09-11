@@ -45,7 +45,7 @@ renv::restore(prompt = FALSE)
 
 8. Source the .Rprofile or restart the session and wait for renv to install all the packages.
 
-9. To start the container, navigate to this directory and type `make run`. Repeat step 5 to enter Rstudio and go to Project -> Open to open the project `lernplattform.Rproj` inside the `lernplattform` directory. Wait for renv to quickly restore packages from cache.
+To routinely start the container now, navigate to the `correl-aid-r-setup` directory and type `make run`. Repeat step 5 to enter Rstudio and go to Project -> Open to open the project `lernplattform.Rproj` inside the `lernplattform` directory. Wait for renv to quickly restore packages from cache.
  
 ## What it does
 
