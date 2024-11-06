@@ -9,6 +9,9 @@ fi
 echo "using port:"
 echo "localhost:8787"
 
+# Rstudio password
+PASSWORD=$(jq -r '.rstudio_password' secrets.json)
+
 # Path to the parent of the cloned CorrelAid github repository
 #CORREL_HOME=$1
 CORREL_HOME=${1:-$(realpath ..)} # default value is one directory above
@@ -27,9 +30,12 @@ docker run --rm \
     -v "${RENV_PATHS_CACHE_HOST}:${RENV_PATHS_CACHE_CONTAINER}" \
     -v "${CORREL_HOME}:/home/rstudio/CorrelAid"  \
     -v "${PWD}/rstudio-settings:/home/rstudio/.config/rstudio" \
-    -e "PASSWORD=foobar"  \
+    -e "PASSWORD=${PASSWORD}"  \
     -p 8787:8787 \
-    correl-aid:latest #replace with your container name
+    correl-aid:latest  & #replace with your container name
+
+# wait for docker to start up
+sleep 5
 
 # start rstudio in a browser
 xdg-open http://localhost:8787

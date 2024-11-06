@@ -4,5 +4,6 @@
     "reuse_sessions_for_project_links": true,
     "posix_terminal_shell": "bash",
     "initial_working_directory": "~",
-    "soft_wrap_r_files": true
+    "soft_wrap_r_files": true,
+    "real_time_spellchecking": false
 }
