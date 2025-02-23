@@ -1,0 +1,16 @@
+services:
+  rstudio:
+    image: correl-aid:latest
+    secrets:
+      - rstudio_password
+    ports:
+      - "8787:8787"
+    volumes:
+      - ../renv-cache:/home/rstudio/.cache/R/renv
+      - ..:/home/rstudio/CorrelAid
+      - ./rstudio_settings:/home/rstudio/.config/rstudio
+    environment:
+      - PASSWORD_FILE=/run/secrets/rstudio_password
+secrets:
+  rstudio_password:
+    file: .rstudio_password
