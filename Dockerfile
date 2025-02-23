@@ -1,6 +1,6 @@
 # Dockerfile to make an environment for CorrelAid Rlernen course
 # Start with rocker rstudio image and the version that CorrelAid uses
-FROM rocker/rstudio:4.3.1
+FROM rocker/rstudio:4.4.2
 
 
 # Install missing system dependencies for packages in renv

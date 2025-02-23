@@ -1,6 +1,6 @@
 services:
   rstudio:
-    image: correl-aid:latest
+    build: .
     secrets:
       - rstudio_password
     ports:

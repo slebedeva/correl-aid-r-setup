@@ -61,3 +61,22 @@ Makefile provides a shorthand to start the container using the script `run_docke
 ## Note on rstudio-settings
 
 Currently the only setting I choose to change from default is to wrap text in code editor. We use ephemeral containers (`--rm` makes sure they are removed after we finish and start fresh again next time), so Rstudio user settings will disappear as well. To save them, simply start the container, choose your settings, go to Terminal and `cp ~/.config/rstudio/rstudio-prefs.json [your mounted folder of choice]`. In my case, I mount the settings directory directly from home of this repo (`rstudio-settings`) - you will need to edit mount bind in the `run_docker_local_mount.sh` if you change it.
+
+## Docker-compose
+
+Trying to use secrets directive to provide rstudio password, but it does not work. For now:
+
+- start service with `docker compose up -d`
+- print logs with `docker compose logs`
+- find your tmporary password like this:
+```
+rstudio-1  | tput: No value for $TERM and no -T specified
+rstudio-1  | The password is set to <password>
+rstudio-1  | If you want to set your own password, set the PASSWORD environment variable. e.g. run with:
+rstudio-1  | docker run -e PASSWORD=<YOUR_PASS> -p 8787:8787 rocker/rstudio
+```
+- go to localhost:8787 and login with rstudio username and the password,
+
+## Bumping up R version 
+
+In 2025, the students will have installed R 4.4.2 so I update the image as well.
